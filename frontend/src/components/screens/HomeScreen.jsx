@@ -1,13 +1,13 @@
-import AppGridContainer from '../components/AppGridContainer/AppGridContainer';
-import { useAppsContext, useBreakpointContext, useTime } from '../hooks/useContexts';
+import { useAppStoreContext, useTime, useViewportContext } from '../../marrfeeOSHooks/hooks/contexts';
+import AppGridContainer from '../AppGridContainer/AppGridContainer';
 import './screen.css';
 import { useEffect } from "react";
 
 function HomeScreen({  className = "" }) {
-  const { appList } = useAppsContext();
-  const { getViewport } = useBreakpointContext();
+  const { appList } = useAppStoreContext();
+  const { getViewport } = useViewportContext();
   const device = getViewport();
-  const {changeTimeColor} = useTime();
+  const { changeTimeColor } = useTime();
   const allowedApps = appList.filter(app => app.allowedDevices.includes(device));
   
 

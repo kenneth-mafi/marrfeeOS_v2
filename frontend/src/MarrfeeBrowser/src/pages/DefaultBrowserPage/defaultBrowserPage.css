@@ -1,0 +1,68 @@
+
+.MBr-default-search-page{
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mainheader{
+    text-align: center;
+    width: 100%;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 6rem auto 3rem;
+}
+
+.mainheader span{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.mainheader h1{
+    font-size: 6.4rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: linear-gradient(
+        to right,
+        #050f28,
+        #435273
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.search-field-contr{
+    min-width: 750px;
+    min-height: 40px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.MBr-search-field{
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(3, 3, 38);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: black;
+    cursor: pointer;
+}
+
+.MBr-search-field:focus{
+  outline: none;
+  border-color: rgb(3, 3, 38); 
+  box-shadow: 0 0 20px rgba(3, 3, 38, 0.199);  
+}
+
+/* Remove clear (X) button from search inputs */
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}

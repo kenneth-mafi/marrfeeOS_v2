@@ -1,0 +1,1 @@
+export { default as MarrfeeBrowser } from './src/MarrfeeBrowser';

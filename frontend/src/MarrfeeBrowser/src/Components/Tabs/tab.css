@@ -1,0 +1,49 @@
+.MBr-tab{
+    width: clamp(30px, 280px, 280px);
+    height: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 10px 10px 0 0;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+
+.MBr-tab.active{
+    background-color: white;
+}
+
+.MBr-tab-icon{
+    width: 2rem;
+    height: 2rem;
+}
+
+.MBr-tab-title{
+    color: black;
+    font-size: 1.1rem;
+    text-wrap: nowrap;
+}
+
+.MBr-remove-tab-btn{
+    position: absolute;
+    width: 0.8rem;
+    height: 0.8rem;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    border: none;
+    cursor: pointer;
+    z-index: 15;
+
+}
+
+.MBr-remove-tab-btn img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 15;
+}

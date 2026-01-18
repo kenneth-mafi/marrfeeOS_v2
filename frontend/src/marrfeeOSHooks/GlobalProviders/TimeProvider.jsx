@@ -13,13 +13,10 @@ const TimeProvider = ({ children }) => {
     }
 
     useEffect(() => {
-
         const updateTime = () => setTime( getCurrentTime() );
-
         updateTime();
 
         const interval = setInterval(updateTime, 60_000);
-
         return () => clearInterval(interval);
     }, []);
 

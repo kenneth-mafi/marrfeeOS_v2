@@ -1,12 +1,14 @@
 import './screen.css';
 import { Outlet } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import { useTime, useViewportContext } from '../../marrfeeOSHooks/hooks/contexts';
 
 
 function Screen() {
-    const {time, timeColor} = useTime();
-    const {getViewport} = useBreakpointContext();
+    const { time, timeColor } = useTime();
+    const { getViewport } = useViewportContext();
     const device = getViewport();
+    
     return (
       <div 
         className="main-screen-container"

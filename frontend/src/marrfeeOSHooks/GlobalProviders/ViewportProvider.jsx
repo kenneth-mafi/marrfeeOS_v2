@@ -24,5 +24,4 @@ const ViewportProvider = ({ children }) => {
     </ViewportContext.Provider>
   );
 };
-use
 export default ViewportProvider;

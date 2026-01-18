@@ -1,0 +1,43 @@
+1. Browser Initialization
+  - It stores
+    - A registry of available websites {k: v}
+    - Navigation history
+    - Current active page
+
+2. Website Registration
+    - each website that wants to be accessible, calls registerWebsite(url, page, title)
+    - the browser stores this in its website registry
+    - no navigation happens at this stage
+
+3. User Input - URL bar
+    - User types text into the url Input,
+    - When enter is pressed:
+        - the input is normalized (adds mmm. if missing)
+        - browser checks if url exists in the registry
+
+4. Navigation decision
+    - If the url exists: 
+        - navigate to the registered page   
+        - update the page title (if provided)
+        - add url to navigation history
+    - if the url does not exists
+        - navigate to a 404 page
+        - still record the attempted url in history
+
+5. Search box behavior
+    - As the user types:
+        - browser filters registered website urls based on characters being typed
+        and shows suggestions
+    - clicking the suggestion:
+        - triggers normal navigation to url.
+
+6. history tracking
+    - each succesful navigation pushes url to recentlyVisited set (to avoid duplicates)
+    - this set will be used to suggest recent sites and simulate browser history
+
+7. rendering
+    - browser renders:
+        url search bar, search suggestion, active pages.
+
+## also thinking to scale later, we could add tabs logic where clicking add tab pushes a new tab
+    to an object of tabs with unique keys or a list. 
