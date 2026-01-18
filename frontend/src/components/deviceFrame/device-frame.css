@@ -1,0 +1,141 @@
+ /* mobile 481px - 
+tablet 768px - 1024px
+desktop 1025px - 1200px */
+
+.device-frame{
+  border: 0.1em solid black;
+  padding: 0.1em;
+  position: relative;
+  background-color: rgb(239, 238, 238);
+}
+
+/* border */
+.device-border{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* MOBILE FRAME */
+.mobile-view{
+  width: 398px;
+  height: 854px;
+  border-radius: 3em;
+}
+
+.mobile-border{
+  border: 0.5rem solid black;
+  border-radius: 3em;
+  overflow: hidden;
+}
+
+.camera-container{
+  width: 38%;
+  height: 2rem;
+  background-color: black;
+  border-radius: 50px;
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.134);
+}
+
+
+/* TABLET FRAME */
+.tablet-view{
+  width: 768px;
+  height: 1024px;
+  border-radius: 2.5em;
+}
+
+.tablet-border{
+  border: 1.5rem solid black;
+  border-radius: 2.5em;  
+  overflow: hidden;
+}
+
+
+/* LAPTOP FRAME */
+.laptop-view{
+  width: 1310px;
+  height: 910px;
+  border-top-right-radius: 1.5em; 
+  border-top-left-radius: 1.5em; 
+  position: relative;
+}
+
+.laptop-border{
+  border: 1em solid black;
+  border-bottom: none;
+  border-top-right-radius: 1.5em; 
+  border-top-left-radius: 1.5em; 
+}
+
+.laptop-camera-container{
+  width: 8%;
+  height: 1rem;
+  background-color: black;
+  border-bottom-right-radius: 1.5em; 
+  border-bottom-left-radius: 1.5em; 
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;  
+}
+
+.laptop-keyboard{
+  width: 120%;
+  height: 1.5rem;
+  background-color: black;
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom-right-radius: 1.5em; 
+  border-bottom-left-radius: 1.5em; 
+}
+
+/* DESKTOP FRAME */
+.desktop-view{
+  width: 1657px;
+  height: 1043px;
+  border-radius: 1rem;
+  position: relative;  
+}
+
+.desktop-border{
+  border: 1.3rem solid black;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.desktop-stand{
+  width: 200px;
+  height: 100px;
+  background-color: black;
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.desktop-stand p{
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.stand-horizontal{
+  width: 650px;
+  height: 1rem;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
