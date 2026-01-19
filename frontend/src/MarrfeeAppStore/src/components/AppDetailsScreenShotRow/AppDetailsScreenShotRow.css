@@ -1,0 +1,22 @@
+.mOS-shots{
+  width: 100%;
+  padding: 6px 14px 6px;
+}
+
+.mOS-shots-title{
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.mOS-shots-row{
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.mOS-shots-row::-webkit-scrollbar{
+  display: none;
+}

@@ -1,0 +1,36 @@
+.mOS-featureBanner{
+  width: 95%;
+  margin: 0 auto;
+  height: 200px;
+  border-radius: 16px;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: linear-gradient(180deg, #0a84ff, #53c7ff);
+  color: #fff;
+}
+
+.mOS-featureBanner-editorial{
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  opacity: 0.9;
+  margin-bottom: 0.3rem;
+}
+
+.mOS-featureBanner-title{
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+
+.mOS-featureBanner-subtitle{
+  font-size: 0.7rem;
+  opacity: 0.9;
+}
+
+.mOS-featureBanner-right{
+  display: flex;
+  align-items: center;
+}

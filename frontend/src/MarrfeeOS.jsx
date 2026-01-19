@@ -7,6 +7,7 @@ import Screen from './components/screens/Screen';
 
 // Browser
 const MarrfeeBrowser = lazy(() => import('./MarrfeeBrowser').then(module => ({ default: module.MarrfeeBrowser })));
+const MarrfeeAppStore = lazy(() => import('./MarrfeeAppStore').then(module => ({ default: module.MarrfeeAppStore })));
 
 function MarrfeeOS() {
 
@@ -30,6 +31,9 @@ function MarrfeeOS() {
 
               {/* browser */}
               <Route path="/marrfeeBrowser/*" element={<MarrfeeBrowser />}></Route>
+
+              {/* app store */}
+              <Route path='/marrfeeAppStore/*' element={ <MarrfeeAppStore /> } />
 
             </Route>
           </Routes>

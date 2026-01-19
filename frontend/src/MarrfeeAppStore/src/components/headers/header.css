@@ -1,0 +1,94 @@
+
+.MS-header, .MS-sub-header{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 99; 
+  background-color: white;
+}
+
+.MS-header{
+  justify-content: space-between;
+  gap: 0;  
+  padding: 3.5rem 0 0;
+}
+
+.MS-header-left-section, .MS-header-right-section{
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.MS-header-right-section{
+    justify-content: flex-end;
+}
+
+.MS-notification-contr, .MS-user-contr, .MS-nav-bar-hamburger{
+  width: 2.8rem;
+  height: 2.8rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.MS-notification-contr img{
+  width: 2rem;
+}
+
+.MS-user-contr img{
+  width: 1.7rem; 
+  height: 1.6rem;
+}
+
+.MS-hamburger-btn{
+  border: none;
+  background: none;
+}
+
+.MS-hamburger-btn img{
+  width: 2rem;
+}
+
+
+/*=================*/
+
+.MS-sub-header{
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 4rem 0 0;
+}
+
+.MS-sub-header h2{
+  font-size: 1.5rem;
+  text-align: right;
+}
+
+.MS-sub-header img{
+  width: 1.5rem;
+  height: auto;
+}
+
+
+.MS-sidebar-return-btn{
+  background: none;
+  border: none;
+}
+
+
+.MS-sidebar-return-btn img{
+  width: 1rem !important;
+  height: 1rem !important;
+}
+
+.ms-subheader-btn{
+  background: none;
+  border: none;
+}

@@ -1,0 +1,33 @@
+.mOS-tabBar{
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  padding: 1.3rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.mOS-tabBar-btn{
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: grid;
+  gap: 3px;
+  justify-items: center;
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+.mOS-tabBar-btn--active{
+  opacity: 1;
+  color: #0a84ff;
+}
+
+.mOS-tabBar-icon{
+  font-size: 10px;
+  line-height: 10px;
+}

@@ -1,0 +1,39 @@
+.mOS-miniRow{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: black;
+}
+
+.mOS-miniRow-icon{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 10px;
+  background: #eaeaea;
+  overflow: hidden;
+}
+
+.mOS-miniRow-iconImg{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mOS-miniRow-name{
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.mOS-miniRow-cat{
+  font-size: 0.6rem;
+  opacity: 0.7;
+}
+
+.mOS-miniRow-action{
+  display: flex;
+  align-items: center;
+}

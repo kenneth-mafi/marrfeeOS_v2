@@ -1,0 +1,26 @@
+.mOS-detailsTopBar{
+  width: 100%;
+  padding: 10px 14px 6px;
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  align-items: center;
+}
+
+.mOS-detailsTopBar-back{
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+  color: #0a84ff;
+  text-align: left;
+}
+
+.mOS-detailsTopBar-title{
+  font-size: 14px;
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+.mOS-detailsTopBar-right{
+  height: 1px;
+}

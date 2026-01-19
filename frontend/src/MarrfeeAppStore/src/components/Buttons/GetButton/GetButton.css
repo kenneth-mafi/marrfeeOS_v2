@@ -1,0 +1,14 @@
+.mOS-getBtn{
+  border: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+  background: #0a84ff;
+  color: #fff;
+}
+
+.mOS-getBtn:active{
+  transform: scale(0.98);
+}

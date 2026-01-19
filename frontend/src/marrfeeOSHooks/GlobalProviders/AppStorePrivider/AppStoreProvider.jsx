@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { AppStoreContext } from "../../contexts/contexts";
-import { dictExistsInList, hasRequiredAppFields } from "../../../marrfeeOSUtils/comparison";
+import { dictExistsInList, filterOutFromList, hasRequiredAppFields } from "../../../marrfeeOSUtils/queryAction";
 import getDefaultApps from "./defaultApps";
 
 const AppStoreProvider = ({ children }) => {
 
     const [appList, setAppList] = useState( getDefaultApps() );
-    const [appStoreList, setAppStoreList] = useState( getDefaultApps() );
+    const [appStoreList, setAppStoreList] = useState( filterOutFromList( getDefaultApps(), 'isSystemApp', true ) );
 
 
     const addApp = ( appData, destination="appStore") => {

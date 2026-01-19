@@ -1,0 +1,34 @@
+.mOS-ratings{
+  width: 100%;
+  padding: 10px 14px 20px;
+}
+
+.mOS-ratings-title{
+  font-size: 18px;
+  font-weight: 900;
+  margin: 8px 0 10px;
+}
+
+.mOS-ratings-summary{
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.mOS-ratings-score{
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.mOS-ratings-stars{
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.mOS-ratings-count{
+  font-size: 12px;
+  opacity: 0.65;
+  margin-top: 4px;
+}

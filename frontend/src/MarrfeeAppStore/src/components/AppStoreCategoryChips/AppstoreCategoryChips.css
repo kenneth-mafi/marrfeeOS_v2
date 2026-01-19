@@ -1,0 +1,25 @@
+.mOS-chipRow{
+  width: 100%;
+  padding: 6px 14px 10px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.mOS-chipRow::-webkit-scrollbar{ display:none; }
+
+.mOS-chip{
+  border: none;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: #f1f1f1;
+  color: #222;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.mOS-chip--active{
+  background: #0a84ff;
+  color: #fff;
+}

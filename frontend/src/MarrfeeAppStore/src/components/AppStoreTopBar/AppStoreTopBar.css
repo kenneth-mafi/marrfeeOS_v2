@@ -1,0 +1,26 @@
+.mOS-appStoreTopBar{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  
+}
+
+.mOS-appStoreTopBar-title{
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-align: left;
+}
+
+.mOS-appStoreTopBar-rightBtn{
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: none;
+  background: #eaeaea;
+  color: #333;
+  cursor: pointer;
+  justify-self: end;
+}

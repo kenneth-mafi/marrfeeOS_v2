@@ -1,0 +1,26 @@
+.mOS-scrollArea{
+  width: 100%;
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* vertical scrolling (default) */
+.mOS-scrollArea--y{
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* horizontal scrolling */
+.mOS-scrollArea--x{
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+/* optional: hide scrollbar but keep scrolling */
+.mOS-scrollArea::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+}

@@ -1,0 +1,19 @@
+.mOS-shotCard{
+  flex: 0 0 auto;
+  width: 180px;
+  height: 320px;
+  border-radius: 14px;
+  background: #f2f2f2;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.mOS-shotCard-inner{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  font-size: 72px;
+  font-weight: 900;
+  color: #d0d0d0;
+}

@@ -1,0 +1,27 @@
+.mOS-essentials{
+  width: 100%;
+  padding-top: 4px;
+}
+
+.mOS-essentials-header{
+  width: 100%;
+  padding: 8px 14px 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mOS-essentials-title{
+  margin: 0;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.mOS-essentials-more{
+  font-size: 18px;
+  opacity: 0.6;
+}
+
+.mOS-essentials-list{
+  width: 100%;
+}
