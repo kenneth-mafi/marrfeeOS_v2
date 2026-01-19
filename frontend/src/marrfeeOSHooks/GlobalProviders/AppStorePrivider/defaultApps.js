@@ -1,5 +1,10 @@
 import appLogo from '../../../MarrfeeBrowser/src/assets/marrfee-logo.png';
 import appStoreLogo from '../../../MarrfeeAppStore/src/assets/app.png';
+import { lazy } from 'react';
+
+// Browser
+const MarrfeeBrowser = lazy(() => import('../../../MarrfeeBrowser').then(module => ({ default: module.MarrfeeBrowser })));
+const MarrfeeAppStore = lazy(() => import('../../../MarrfeeAppStore').then(module => ({ default: module.MarrfeeAppStore })));
 
 const getDefaultApps = () => {
   return [
@@ -9,6 +14,7 @@ const getDefaultApps = () => {
       appStoreName: "Marrfee Browser",
 
       path: "/marrfeeBrowser",
+      Component: MarrfeeBrowser,
       appLogo: appLogo,
       color: "whitesmoke",
 
@@ -21,10 +27,14 @@ const getDefaultApps = () => {
 
       category: "System",
       type: "Core Application",
-      size: "Built-in"
+      size: "Built-in",
+
+      keywords: [],
+
     },
     {
       id: "marrfeeAppStore",
+      Component: MarrfeeAppStore,
       appName: "App Store",
       appStoreName: "Marrfee App Store",
 
@@ -41,7 +51,10 @@ const getDefaultApps = () => {
 
       category: "System",
       type: "Core Application",
-      size: "Built-in"
+      size: "Built-in",
+
+      keywords: [],
+
     }
   ];
 };

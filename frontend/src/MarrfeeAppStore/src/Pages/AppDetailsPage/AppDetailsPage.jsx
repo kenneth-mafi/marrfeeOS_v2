@@ -11,10 +11,10 @@ import "./AppDetailsPage.css";
 
 export default function AppDetailsPage() {
 
-    const navigate = useNavigate();
-    const goBack = () => {
-        navigate(-1);
-    }
+  const navigate = useNavigate();
+  const goBack = () => {
+      navigate(-1);
+  }
   const pageContent = [
     { Component: AppDetailsTopBar, props: { title: "Apps", onBack: goBack }  },
     {
