@@ -1,0 +1,60 @@
+.digId-input-keypad-contr{
+    width: 100%;
+    min-height: 50%;
+    background-color: var(--portfolio-bg-surface);
+    display: flex;
+    gap: 1rem;
+    padding: 1.1rem .5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--text-muted);
+}
+
+.digId-keypad-contr{
+    width: 100%;
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .1rem;
+    grid-auto-rows: 80px;
+    border-bottom-left-radius: 1.6rem;
+    border-bottom-right-radius: 1.6rem;
+    overflow: hidden;
+}
+
+.digId-keypad-button{
+    max-height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border: 1px solid var(--text-primary);
+    background-color: var(--portfolio-bg-surface);
+    color: var(--text-primary);
+}
+
+.digId-keypad-button:active{
+    background-color: var(--text-muted);
+    color: var(--portfolio-bg-surface);
+}
+
+.digId-keypad-button:disabled{
+    background-color: var(--text-muted);
+    color: gray;
+}
+
+.digId-keypad-button-text{
+    font-size: 1.1rem;
+}
+
+.digId-keypad-delete-icon{
+    width: 35px;
+    height: auto;
+    object-fit: contain;
+}

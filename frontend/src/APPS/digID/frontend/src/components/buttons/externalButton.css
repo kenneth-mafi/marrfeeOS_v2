@@ -1,0 +1,34 @@
+
+.digId-external-button{
+    width: 85%;
+    margin: 0 auto;
+    height: 3.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #8094ac;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.digId-external-button:hover{
+    background-color: #357ABD;
+}
+
+.digId-external-button:active{
+    background-color: #2C5F9E;
+}
+
+.digId-external-button-icon{
+    width: 2rem;
+    height: 2rem;
+}
+
+.digId-external-button-text{
+    font-weight: 600;
+    font-size: 1rem;
+}

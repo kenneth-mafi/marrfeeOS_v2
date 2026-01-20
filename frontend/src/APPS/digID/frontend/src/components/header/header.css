@@ -1,0 +1,41 @@
+
+.digId-header{
+  width: 100%;
+  min-height: 6rem;
+  display: flex;
+  /* background-color: var(--portfolio-bg-muted); */
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  padding: 1.8rem 1rem 1rem 1rem;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.digId-header-text{
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.digId-header-title{
+  font-size: 1.2rem;
+}
+
+.digId-header-link{
+  color: var(--text-primary);
+  line-height: 1px;
+}
+
+.digId-header-icon{
+  width: 1.5rem;
+  height: auto;
+}
+
+.digId-header-logo{
+  width: 1.7rem;
+}
+
+.digId-auth-header{
+    background-color: var(--text-muted);
+}

@@ -1,0 +1,19 @@
+.digId-launch-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: var(--portfolio-bg-surface);
+    gap: 0.5rem;
+}
+
+.digId-launch-icon {
+    width: 150px;
+    height: 150px;
+}
+
+.digId-launch-name {
+    font-size: 1.8em;
+    color: var(--text-primary);
+}

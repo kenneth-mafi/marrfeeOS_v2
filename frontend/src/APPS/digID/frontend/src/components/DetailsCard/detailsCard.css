@@ -1,0 +1,21 @@
+.digId-address-card-contr{
+  min-height: 6rem;
+  padding: 1rem;
+  width: 100%;
+  background-color: rgba(120, 116, 116, 0.082);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.digId-request-location{
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.digId-client-name{
+  font-weight: 600;
+}

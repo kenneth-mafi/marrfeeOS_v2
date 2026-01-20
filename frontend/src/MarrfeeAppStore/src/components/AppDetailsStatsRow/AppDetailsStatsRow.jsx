@@ -10,13 +10,13 @@ function Stat({ top, middle, bottom }) {
   );
 }
 
-export default function AppDetailsStatsRow() {
+export default function AppDetailsStatsRow({ appData }) {
   return (
     <section className={`mOS-statsRow`}>
       <Stat top={"1337 RATINGS"} middle={"5.0"} bottom={"★★★★★"} />
       <Stat top={"AGE"} middle={"12+"} bottom={"Years Old"} />
-      <Stat top={"CHART"} middle={"No.1"} bottom={"Category"} />
-      <Stat top={"DEVELOPER"} middle={"🤖"} bottom={"Marrfee, Inc"} />
+      <Stat top={"CHART"} middle={"No.1"} bottom={appData.category} />
+      <Stat top={"DEVELOPER"} middle={"🤖"} bottom={"Marrfee, co"} />
       <Stat top={"LANGUAGE"} middle={"EN"} bottom={"+ 23 More"} />
     </section>
   );

@@ -5,9 +5,19 @@ export const dictExistsInList = ( existingData, newData, checkFor ) => {
     return existingData.some(data => data?.[checkFor] === newData[checkFor])
 }
 
-export const hasRequiredAppFields = ( app ) => {
-  return Boolean(app?.appName && app?.appLogo && app?.path && app?.id);
+export const hasRequiredAppFields = (app) => {
+  return Boolean(
+    app &&
+    app.id &&
+    app.appName &&
+    app.path &&
+    app.color &&
+    app.appLogo &&
+    app.size &&
+    app.allowedDevices.length > 0
+  );
 };
+
 
 export const filterListBy = (list, key, value) =>
   list.filter(item => item?.[key] === value);

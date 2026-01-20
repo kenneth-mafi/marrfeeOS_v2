@@ -8,10 +8,12 @@ import AppStoreHeadlineRow from '../components/AppStoreHeadlineRow/AppStoreHeadl
 import AppStoreTabBar from '../components/AppStoreTabBar/AppStoreTabBar';
 import AppStoreTopBar from '../components/AppStoreTopBar/AppStoreTopBar';
 import "./appStorePages.css";
+import { useAppStoreContext } from '../../../marrfeeOSHooks/hooks/contexts';
 
 export default function AppsHomePage() {
   const navigate = useNavigate();
-
+  const { appStoreList } = useAppStoreContext();
+  
 
   const chips = ["Finance", "Social Networking", "New", "Productivity", "Education"];
 
@@ -19,17 +21,6 @@ export default function AppsHomePage() {
     { id: "h1", badge: "1" },
     { id: "h2", badge: "2" },
     { id: "h3", badge: "3" },
-  ];
-
-  const essentialsApps = [
-    { id: "e1", name: "App Name", category: "Food & Drink" },
-    { id: "e2", name: "App Name", category: "Food & Drink" },
-    { id: "e3", name: "App Name", category: "Food & Drink" },
-    { id: "e4", name: "App Name", category: "Food & Drink" },
-    { id: "e5", name: "App Name", category: "Food & Drink" },
-    { id: "e6", name: "App Name", category: "Food & Drink" },
-    { id: "e7", name: "App Name", category: "Food & Drink" },
-    { id: "e8", name: "App Name", category: "Food & Drink" },
   ];
 
   const pageContent = [
@@ -40,7 +31,7 @@ export default function AppsHomePage() {
           <AppStoreCategoryChips chips={chips} active='Finance'/>
           <AppStoreFeaturedBanner title='Title' subtitle='Text by editorial' />
           <AppStoreHeadlineRow items={headlineItems} title='Headline' />
-          <AppStoreEssentialsList apps={essentialsApps} title='Essential Apps' />
+          <AppStoreEssentialsList apps={appStoreList} title='Essential Apps' />
         </ScrollArea>
       ),
     },

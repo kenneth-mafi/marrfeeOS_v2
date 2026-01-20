@@ -1,6 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import DeviceFrame from './components/deviceFrame/DeviceFrame';
-import { Suspense, useEffect } from 'react';
+import { Suspense, useEffect, useRef } from 'react';
 import { useAppStoreContext } from './marrfeeOSHooks/hooks/contexts';
 import HomeScreen from './components/screens/HomeScreen';
 import Screen from './components/screens/Screen';
@@ -8,12 +8,25 @@ import appLoaderMap from './marrfeeOSHooks/GlobalProviders/AppStorePrivider/appL
 
 function MarrfeeOS() {
 
-  const { addApp, appList, isLoadingApps } = useAppStoreContext();
-  useEffect(() => {
-     // Dynamically import app registration functions so their code is not included
-     // in the initial bundle. Each registration will call `addApp` with metadata.
+  const { addToAppStore, appList, isLoadingApps, appStoreList } = useAppStoreContext();
+  const hasLaunchedAppsRef = useRef(false);
 
-  }, []);
+  useEffect(() => {
+    if (isLoadingApps || hasLaunchedAppsRef.current) return;
+    hasLaunchedAppsRef.current = true;
+
+    // Dynamically import app registration functions so their code is not included
+    // in the initial bundle. Each registration will call `addApp` with metadata.
+    import('./APPS/digID/frontend')
+      .then(mod => {
+        if (mod.launchApp) {
+          mod.launchApp(addToAppStore);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, [isLoadingApps, addToAppStore]);
 
   if (isLoadingApps) {
     return (

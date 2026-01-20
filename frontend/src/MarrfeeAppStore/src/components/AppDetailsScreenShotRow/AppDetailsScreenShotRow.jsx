@@ -11,12 +11,17 @@ export default function AppDetailsScreenshotRow({
       <h3 className={`mOS-shots-title`}>{title}</h3>
 
       <div className={`mOS-shots-row`}>
-        {shots.map((s, i) => (
-          <AppDetailsScreenshotCard
+        {shots.map((s, i) => {
+          const apiBase = (import.meta.env.VITE_API_URL || "http://localhost:8000").replace(/\/$/, "");
+          const screenshot = typeof s === "string" && s.startsWith("/static")
+            ? `${apiBase}${s}`
+            : s;
+            
+          return <AppDetailsScreenshotCard
             key={`${s}-${i}`}
-            label={s}
+            src={screenshot}
           />
-        ))}
+        })}
       </div>
     </section>
   );

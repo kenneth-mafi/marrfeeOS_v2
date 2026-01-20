@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AppStoreContext } from "../../contexts/contexts";
 import { dictExistsInList, hasRequiredAppFields } from "../../../marrfeeOSUtils/queryAction";
-import { fetchApps } from "./appStoreApi";
+import { addToStore, fetchApps } from "./appStoreApi";
 
 const AppStoreProvider = ({ children }) => {
 
@@ -16,27 +16,32 @@ const AppStoreProvider = ({ children }) => {
                     fetchApps("appStore"),
                     fetchApps("appList")
                 ]);
+
                 setAppStoreList(appStore);
                 setAppList(appList);
             } finally {
-                setIsLoadingApps(false);
+                setIsLoadingApps(false);  
             }
         };
 
         initApps();
     }, []);
 
-    const addApp = ( appData, destination="appStore") => {
+    const addToAppStore = async ( appData, appID ) => {
+        const exits = appStoreList.find(app => app.id === appID)
+        if (exits) return;   
         if ( !( hasRequiredAppFields(appData ) ) ) {
             console.log("⚠️ Incomplete App Data");
             return;
         }  
         
-        const setList = destination === "appStore" ? setAppStoreList : setAppList
-        setList(prev => {
-            if ( dictExistsInList(prev, appData, "path") ) return prev;
-            return [...prev, appData]
-        });
+        const res = await addToStore( appData );
+        console.log(res);
+        if (res?.success) {
+            setAppStoreList(prev =>
+                prev.some(app => app.id === appID) ? prev : [...prev, appData]
+            );
+        }
     }
 
 
@@ -45,8 +50,8 @@ const AppStoreProvider = ({ children }) => {
             value={{
                 appList,
                 appStoreList,
-                addApp,
-                isLoadingApps
+                isLoadingApps,
+                addToAppStore
             }}
         >
             {children}

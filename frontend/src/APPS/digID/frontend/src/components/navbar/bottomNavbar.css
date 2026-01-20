@@ -1,0 +1,35 @@
+.digId-bottom-nav{
+  width: 100%;
+  min-height: 80px;
+  background-color: var(--portfolio-bg-surface);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.151);
+  display: flex;
+  justify-content: space-around;
+  padding: 1.5rem 2rem;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.digId-bottom-nav-link{
+  text-decoration: none;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  font-size: 0.8rem;
+  color: var(---text-primary);
+}
+
+.digId-nav-icon-normal{
+  width: 2rem;
+  cursor: pointer;
+  transition: scale 0.2s ease-in-out;
+}
+
+.digId-nav-icon-normal:hover{
+  scale: 1.05;
+}

@@ -1,0 +1,11 @@
+.digId-authentification-page{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6rem;
+    background-color: var(---portfolio-bg-surface);
+}

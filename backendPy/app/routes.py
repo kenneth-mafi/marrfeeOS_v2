@@ -48,6 +48,10 @@ def launch_app():
     if keywords is not None and not isinstance(keywords, str):
         keywords = json.dumps(keywords)
 
+    screenshots = data.get("screenshots")
+    if screenshots is not None and not isinstance(screenshots, str):
+        screenshots = json.dumps(screenshots)
+
     # Optional: prevent duplicate ID
     existing = App.query.get(data["id"])
     if existing:
@@ -64,12 +68,14 @@ def launch_app():
                 appLogo=data["appLogo"],
                 description=data.get("description"),
                 category=data.get("category"),
-                allowedDevices=data.get("allowedDevices"),  # JSON string
+                allowedDevices=allowed_devices,  # JSON string
                 type=data.get("type"),
                 isSystemApp=int(data.get("isSystemApp", 0)),
                 isInstalled=int(data.get("isInstalled", 0)),
                 size=data["size"],
-                keywords=data.get("keywords"),  # JSON string
+                keywords=keywords,               # JSON string
+                screenshots=screenshots,         # JSON string
+                heroImage=data.get("heroImage"),
             )
 
     # 5️⃣ Persist to database

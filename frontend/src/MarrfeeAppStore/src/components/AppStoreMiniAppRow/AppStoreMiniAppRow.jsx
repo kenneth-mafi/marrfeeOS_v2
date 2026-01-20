@@ -2,10 +2,13 @@ import { Link } from "react-router-dom";
 import GetButton from "../Buttons/GetButton/GetButton";
 import "./AppStoreMiniAppRow.css";
 
-export default function AppStoreMiniAppRow({ icon, name = "App Name", category = "Food & Drink", onGet, to="/marrfeeAppStore/appDetailsPage" }) {
+export default function AppStoreMiniAppRow({ icon, name = "App Name", category = "Food & Drink", onGet, to="/marrfeeAppStore/appDetailsPage", color="", appData={} }) {
+
+  const text = appData.isInstalled ? "Open" : "Get"
+  
   return (
-    <Link className={`mOS-miniRow`} to={to} >
-      <div className={`mOS-miniRow-icon`}>
+    <Link className={`mOS-miniRow`} to={to} state={{appData}} >
+      <div className={`mOS-miniRow-icon`} style={{backgroundColor: `${color}`}} >
         {icon ? <img className={`mOS-miniRow-iconImg`} src={icon} alt={name} /> : null}
       </div>
 
@@ -15,7 +18,7 @@ export default function AppStoreMiniAppRow({ icon, name = "App Name", category =
       </div>
 
       <div className={`mOS-miniRow-action`}>
-        <GetButton onClick={onGet} />
+        <GetButton onClick={onGet} text={text} />
       </div>
     </Link>
   );

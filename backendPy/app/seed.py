@@ -19,6 +19,10 @@ def plant_system_apps():
         if keywords is not None and not isinstance(keywords, str):
             keywords = json.dumps(keywords)
 
+        screenshots = item.get("screenshots")
+        if screenshots is not None and not isinstance(screenshots, str):
+            screenshots = json.dumps(screenshots)
+
         app = App(
             id=item["id"],
             appName=item["appName"],
@@ -34,6 +38,8 @@ def plant_system_apps():
             isInstalled=int(bool(item.get("isInstalled", 0))),
             size=item["size"],
             keywords=keywords,
+            screenshots=screenshots,
+            heroImage=item.get("heroImage"),
         )
 
         db.session.add(app)

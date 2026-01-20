@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: 86px 1fr;
   gap: 12px;
+  margin-top: 1rem;
 }
 
 .mOS-detailsHero-icon{

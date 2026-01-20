@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  /* Backgrounds */
+  --portfolio-bg-main: #ffffff;     /* pure silky white */
+  --portfolio-bg-surface: #f6f8fb;  /* soft white surface */
+
+  /* Text */
+  --text-primary: #0f172a;
+  --text-muted: #e3e4e6e9;
+
+  /* Brand (from your logo vibe) */
+  --brand-primary: #0b1c3d;   /* deep navy */
+  --brand-accent: #2563eb;   /* soft blue highlight */
+
+  /* Structure */
+  --border-subtle: #e5e7eb;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
