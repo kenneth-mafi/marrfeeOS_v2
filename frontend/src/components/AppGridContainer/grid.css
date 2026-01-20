@@ -1,0 +1,15 @@
+
+.mOS-column-grid-container{
+  display: grid;
+  width: 100%;
+  height: auto;
+  grid-template-columns: repeat(1fr);
+  gap: 0;
+  overflow: hidden;
+}
+
+.mOS-grid-container.secondary{
+  background-color: none;  
+  gap: 1rem;
+}
+

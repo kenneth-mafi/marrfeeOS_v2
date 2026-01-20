@@ -1,0 +1,42 @@
+.mOS-menu-link-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 1.5rem;
+    background-color: rgb(254, 254, 254);
+    border-bottom: 1px solid #eee;
+    text-decoration: none;
+    color: black;
+}
+
+.mOS-menu-link-left{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.mOS-menu-link-left-icon{
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.mOS-menu-link-label{
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.mOS-menu-link-right{
+    display: flex;
+    align-items: center;
+}
+
+.mOS-menu-link-right-icon{
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+}
+
+.mOS-menu-link-item:hover{
+    background-color: #f7f7f7;
+}

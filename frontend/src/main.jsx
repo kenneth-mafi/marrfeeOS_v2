@@ -9,14 +9,14 @@ import BrowserProvider from './marrfeeOSHooks/GlobalProviders/BrowserProvider.js
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserProvider>
-      <TimeProvider>
-        <ViewportProvider>
-          <AppStoreProvider>
-            <MarrfeeOS />
-          </AppStoreProvider>
-        </ViewportProvider>
-      </TimeProvider>
-    </BrowserProvider>
+    <AppStoreProvider>
+      <BrowserProvider>
+        <TimeProvider>
+          <ViewportProvider>
+              <MarrfeeOS />
+          </ViewportProvider>
+        </TimeProvider>
+      </BrowserProvider>
+    </AppStoreProvider>
   </StrictMode>
 )

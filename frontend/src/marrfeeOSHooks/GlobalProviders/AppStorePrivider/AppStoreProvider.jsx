@@ -1,24 +1,30 @@
 import { useEffect, useState } from "react";
 import { AppStoreContext } from "../../contexts/contexts";
-import { dictExistsInList, filterOutFromList, hasRequiredAppFields, sendAPIRequest } from "../../../marrfeeOSUtils/queryAction";
-import getDefaultApps from "./defaultApps";
+import { dictExistsInList, hasRequiredAppFields } from "../../../marrfeeOSUtils/queryAction";
+import { fetchApps } from "./appStoreApi";
 
 const AppStoreProvider = ({ children }) => {
-    
 
-    const [appList, setAppList] = useState( getDefaultApps() );
-    const [appStoreList, setAppStoreList] = useState( filterOutFromList( getDefaultApps(), 'isSystemApp', true ) );
-
-    const logApps = async () => {
-        const appsData = await sendAPIRequest("all-apps", {}, "GET");
-        if (appsData?.success) console.log(appsData.apps);
-        else console.log("NO");
-        
-    }
+    const [appList, setAppList] = useState([]);
+    const [appStoreList, setAppStoreList] = useState([]);
+    const [isLoadingApps, setIsLoadingApps] = useState(true);
 
     useEffect(() => {
-        logApps();
-    }, [])
+        const initApps = async () => { 
+            try {
+                const [appStore, appList] = await Promise.all([
+                    fetchApps("appStore"),
+                    fetchApps("appList")
+                ]);
+                setAppStoreList(appStore);
+                setAppList(appList);
+            } finally {
+                setIsLoadingApps(false);
+            }
+        };
+
+        initApps();
+    }, []);
 
     const addApp = ( appData, destination="appStore") => {
         if ( !( hasRequiredAppFields(appData ) ) ) {
@@ -39,7 +45,8 @@ const AppStoreProvider = ({ children }) => {
             value={{
                 appList,
                 appStoreList,
-                addApp
+                addApp,
+                isLoadingApps
             }}
         >
             {children}

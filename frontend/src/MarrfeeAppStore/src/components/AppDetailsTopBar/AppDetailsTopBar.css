@@ -9,10 +9,15 @@
 .mOS-detailsTopBar-back{
   border: none;
   background: transparent;
-  font-size: 22px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   cursor: pointer;
-  color: #0a84ff;
-  text-align: left;
+}
+
+.mOS-detailsTopBar-back-icon{
+  width: 18px;
+  height: 18px;
 }
 
 .mOS-detailsTopBar-title{

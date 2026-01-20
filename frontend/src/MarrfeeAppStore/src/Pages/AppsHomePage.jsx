@@ -1,14 +1,18 @@
-import MainPageFrame from '../../../../components/PageFrames/mainPageFrame/MainPageFrame';
-import ScrollArea from '../../../../components/ScrollArea/ScrollArea';
-import AppStoreCategoryChips from '../../components/AppStoreCategoryChips/AppstoreCategoryChips';
-import AppStoreEssentialsList from '../../components/AppStoreEssentialList/AppStoreEssentialsList';
-import AppStoreFeaturedBanner from '../../components/AppStoreFeaturedBanner/AppStoreFeaturedBanner';
-import AppStoreHeadlineRow from '../../components/AppStoreHeadlineRow/AppStoreHeadlineRow';
-import AppStoreTabBar from '../../components/AppStoreTabBar/AppStoreTabBar';
-import AppStoreTopBar from '../../components/AppStoreTopBar/AppStoreTopBar';
-import "./AppsHomePage.css";
+import { useNavigate } from 'react-router-dom';
+import MainPageFrame from '../../../components/PageFrames/mainPageFrame/MainPageFrame';
+import ScrollArea from '../../../components/ScrollArea/ScrollArea';
+import AppStoreCategoryChips from '../components/AppStoreCategoryChips/AppstoreCategoryChips';
+import AppStoreEssentialsList from '../components/AppStoreEssentialList/AppStoreEssentialsList';
+import AppStoreFeaturedBanner from '../components/AppStoreFeaturedBanner/AppStoreFeaturedBanner';
+import AppStoreHeadlineRow from '../components/AppStoreHeadlineRow/AppStoreHeadlineRow';
+import AppStoreTabBar from '../components/AppStoreTabBar/AppStoreTabBar';
+import AppStoreTopBar from '../components/AppStoreTopBar/AppStoreTopBar';
+import "./appStorePages.css";
 
 export default function AppsHomePage() {
+  const navigate = useNavigate();
+
+
   const chips = ["Finance", "Social Networking", "New", "Productivity", "Education"];
 
   const headlineItems = [
@@ -29,7 +33,7 @@ export default function AppsHomePage() {
   ];
 
   const pageContent = [
-    { Component: AppStoreTopBar },
+    { Component: AppStoreTopBar, props: {onRightClick: () => { navigate("/marrfeeAppStore/profilePage")}} },
     {
       Component: () => (
         <ScrollArea>
@@ -45,6 +49,6 @@ export default function AppsHomePage() {
 
 
   return (
-    <MainPageFrame components={pageContent} className="mOS-appsHomePage" />
+    <MainPageFrame components={pageContent} className="mOS-appsStorePage" />
   );
 }
