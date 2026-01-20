@@ -1,6 +1,6 @@
 import "./AppStoreTopBar.css";
 
-export default function AppStoreTopBar({ title = "Apps", avatarSrc=null, name="Name", onRightClick }) {
+export default function AppStoreTopBar({ title = "Apps", avatarSrc=null, name="Kenneth", onRightClick }) {
   return (
     <div className={`mOS-appStoreTopBar`}>
       <h2 className={`mOS-appStoreTopBar-title`}>{title}</h2>
