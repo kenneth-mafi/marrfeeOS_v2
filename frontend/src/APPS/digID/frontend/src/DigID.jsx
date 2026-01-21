@@ -27,6 +27,10 @@ export const launchApp = ( addToAppStore ) => {
     addToAppStore( appMetaData, "digIDApp" );
 }
 
+const updateApp = ( updateApps ) => {
+    //TODO: Add fields to update 
+} 
+
 function DigID() {
 
   return (

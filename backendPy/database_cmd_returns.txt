@@ -1,0 +1,398 @@
+BASIC READING (SELECT)
+
+To get all rows and all columns from a table, use:
+SELECT * FROM items;
+
+Returned data:
+
+Returns a result set
+
+Each row is one item
+
+Structure example:
+
+[
+  { "id": 1, "name": "Apple", "price": 10, "category": "Food" },
+  { "id": 2, "name": "Milk", "price": 25, "category": "Drinks" }
+]
+
+
+To get specific columns from a table, use:
+SELECT name, price FROM items;
+
+Returned data:
+
+Returns a result set
+
+Only selected columns are included
+
+Structure example:
+
+[
+  { "name": "Apple", "price": 10 },
+  { "name": "Milk", "price": 25 }
+]
+
+
+To rename columns in the result, use:
+SELECT name AS item_name, price AS item_price FROM items;
+
+Returned data:
+
+Returns a result set
+
+Column names are changed in output only
+
+Structure example:
+
+[
+  { "item_name": "Apple", "item_price": 10 },
+  { "item_name": "Milk", "item_price": 25 }
+]
+
+
+To remove duplicates in the result, use:
+SELECT DISTINCT category FROM items;
+
+Returned data:
+
+Returns a result set
+
+One row per unique value
+
+Structure example:
+
+[
+  { "category": "Food" },
+  { "category": "Drinks" }
+]
+
+
+FILTERING ROWS (WHERE)
+
+To get rows that match a condition, use:
+SELECT * FROM items WHERE id = 5;
+
+Returned data:
+
+Returns a result set
+
+Usually one row
+
+Structure example:
+
+[
+  { "id": 5, "name": "Bread", "price": 15, "category": "Food" }
+]
+
+
+To get rows where a value is greater than, use:
+SELECT * FROM items WHERE price > 100;
+
+Returned data:
+
+Returns a result set
+
+Multiple matching rows
+
+Structure example:
+
+[
+  { "id": 7, "name": "Phone", "price": 500, "category": "Tech" }
+]
+
+
+To filter by multiple conditions (AND), use:
+SELECT * FROM items WHERE category = 'Food' AND price < 50;
+
+Returned data:
+
+Returns a result set
+
+Rows must meet all conditions
+
+Structure example:
+
+[
+  { "id": 1, "name": "Apple", "price": 10, "category": "Food" }
+]
+
+
+To filter by multiple conditions (OR), use:
+SELECT * FROM items WHERE category = 'Food' OR category = 'Drinks';
+
+Returned data:
+
+Returns a result set
+
+Rows meeting at least one condition
+
+Structure example:
+
+[
+  { "name": "Apple", "category": "Food" },
+  { "name": "Milk", "category": "Drinks" }
+]
+
+
+To exclude something, use:
+SELECT * FROM items WHERE category != 'Food';
+
+Returned data:
+
+Returns a result set
+
+Excludes matching category
+
+Structure example:
+
+[
+  { "name": "Milk", "category": "Drinks" },
+  { "name": "Phone", "category": "Tech" }
+]
+
+
+To match one of many values, use:
+SELECT * FROM items WHERE category IN ('Food', 'Drinks');
+
+Returned data:
+
+Returns a result set
+
+Structure example:
+
+[
+  { "name": "Apple", "category": "Food" },
+  { "name": "Milk", "category": "Drinks" }
+]
+
+
+To check a range, use:
+SELECT * FROM items WHERE price BETWEEN 10 AND 50;
+
+Returned data:
+
+Returns a result set
+
+Inclusive range
+
+Structure example:
+
+[
+  { "name": "Apple", "price": 10 },
+  { "name": "Milk", "price": 25 }
+]
+
+
+To search text patterns, use:
+SELECT * FROM items WHERE name LIKE '%apple%';
+
+Returned data:
+
+Returns a result set
+
+Case-insensitive in some DBs
+
+Structure example:
+
+[
+  { "name": "Green Apple", "price": 12 }
+]
+
+
+To find rows where a column is NULL, use:
+SELECT * FROM items WHERE description IS NULL;
+
+Returned data:
+
+Returns a result set
+
+Structure example:
+
+[
+  { "name": "Apple", "description": null }
+]
+
+
+SORTING AND LIMITING RESULTS
+
+To sort ascending, use:
+SELECT * FROM items ORDER BY price ASC;
+
+Returned data:
+
+Returns a result set
+
+Ordered low → high
+
+Structure example:
+
+[
+  { "name": "Apple", "price": 10 },
+  { "name": "Milk", "price": 25 }
+]
+
+
+To get only the first N rows, use:
+SELECT * FROM items LIMIT 2;
+
+Returned data:
+
+Returns a result set
+
+Max N rows
+
+Structure example:
+
+[
+  { "name": "Apple" },
+  { "name": "Milk" }
+]
+
+
+To paginate results, use:
+SELECT * FROM items LIMIT 2 OFFSET 2;
+
+Returned data:
+
+Returns a result set
+
+Skips first 2 rows
+
+Structure example:
+
+[
+  { "name": "Phone" },
+  { "name": "Laptop" }
+]
+
+
+AGGREGATION (COUNT, SUM, AVG, MIN, MAX)
+
+To count rows, use:
+SELECT COUNT(*) AS total_items FROM items;
+
+Returned data:
+
+Returns one row
+
+Scalar value
+
+Structure example:
+
+{ "total_items": 42 }
+
+
+To sum a column, use:
+SELECT SUM(price) AS total_price FROM items;
+
+Returned data:
+
+Returns one row
+
+Scalar number
+
+Structure example:
+
+{ "total_price": 350 }
+
+
+To get avg/min/max, use:
+SELECT AVG(price) AS avg_price, MIN(price) AS min_price, MAX(price) AS max_price FROM items;
+
+Returned data:
+
+Returns one row
+
+Multiple scalar values
+
+Structure example:
+
+{
+  "avg_price": 35.5,
+  "min_price": 5,
+  "max_price": 500
+}
+
+
+GROUPING (GROUP BY + HAVING)
+
+To group rows, use:
+SELECT category, COUNT(*) AS count FROM items GROUP BY category;
+
+Returned data:
+
+Returns a result set
+
+One row per group
+
+Structure example:
+
+[
+  { "category": "Food", "count": 5 },
+  { "category": "Drinks", "count": 3 }
+]
+
+
+JOINING TABLES
+
+INNER JOIN:
+SELECT users.name, orders.total FROM users INNER JOIN orders ON orders.user_id = users.id;
+
+Returned data:
+
+Returns a result set
+
+Only matching rows
+
+Structure example:
+
+[
+  { "name": "John", "total": 150 },
+  { "name": "Jane", "total": 200 }
+]
+
+
+LEFT JOIN:
+SELECT users.name, orders.total FROM users LEFT JOIN orders ON orders.user_id = users.id;
+
+Returned data:
+
+Returns a result set
+
+Missing relations return NULL
+
+Structure example:
+
+[
+  { "name": "John", "total": 150 },
+  { "name": "Anna", "total": null }
+]
+
+
+CHECK IF EXISTS:
+SELECT 1 FROM items WHERE name = 'Apple' LIMIT 1;
+
+Returned data:
+
+Returns either one row or nothing
+
+Structure example:
+
+{ "1": 1 }
+
+
+or:
+
+(no rows)
+
+
+MENTAL RULE (IMPORTANT)
+
+SELECT without aggregation → list of objects
+
+SELECT with aggregation → single object
+
+JOIN → merged object per row
+
+INSERT / UPDATE / DELETE → no data returned

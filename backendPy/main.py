@@ -9,10 +9,10 @@ app = create_app()
 
 with app.app_context():
     db.create_all()
-    ensure_app_columns({
-        "screenshots": "TEXT",
-        "heroImage": "TEXT",
-    })
+    # ensure_app_columns({
+    #     "screenshots": "TEXT",
+    #     "heroImage": "TEXT",
+    # })
     plant_system_apps()
 
 if __name__ == "__main__":

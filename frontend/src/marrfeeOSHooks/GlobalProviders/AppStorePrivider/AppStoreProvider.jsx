@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AppStoreContext } from "../../contexts/contexts";
-import { dictExistsInList, hasRequiredAppFields } from "../../../marrfeeOSUtils/queryAction";
+import { hasRequiredAppFields } from "../../../marrfeeOSUtils/queryAction";
 import { addToStore, fetchApps } from "./appStoreApi";
 
 const AppStoreProvider = ({ children }) => {

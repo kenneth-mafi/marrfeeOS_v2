@@ -5,6 +5,7 @@ import { useAppStoreContext } from './marrfeeOSHooks/hooks/contexts';
 import HomeScreen from './components/screens/HomeScreen';
 import Screen from './components/screens/Screen';
 import appLoaderMap from './marrfeeOSHooks/GlobalProviders/AppStorePrivider/appLoader';
+import LoadingPlaceholder from './components/loadingPlaceholder/LoadingPlaceholder';
 
 function MarrfeeOS() {
 
@@ -31,7 +32,7 @@ function MarrfeeOS() {
   if (isLoadingApps) {
     return (
       <DeviceFrame>
-        <div style={{ padding: 20 }}>Loading apps...</div>
+         <LoadingPlaceholder />
       </DeviceFrame>
     );
   }
@@ -39,7 +40,6 @@ function MarrfeeOS() {
   return (
     <BrowserRouter>
       <DeviceFrame>
-        <Suspense fallback={<div style={{padding:20}}>Loading app...</div>}>
           <Routes>
             <Route element={<Screen />}>
               <Route index element={ <Navigate to="/homeScreen" replace /> } ></Route>
@@ -56,7 +56,6 @@ function MarrfeeOS() {
 
             </Route>
           </Routes>
-        </Suspense>
       </DeviceFrame>
     </BrowserRouter>
   )

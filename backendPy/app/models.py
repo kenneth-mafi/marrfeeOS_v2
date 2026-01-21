@@ -1,6 +1,8 @@
 from . import db
 from sqlalchemy import text
 import json
+
+
 class App( db.Model ):
     __tablename__ = "apps"
 

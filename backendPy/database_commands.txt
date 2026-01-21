@@ -1,0 +1,202 @@
+Basic reading (SELECT)
+
+To get all rows and all columns from a table, use:
+    SELECT * FROM items;
+
+To get specific columns from a table, use:
+    SELECT name, price FROM items;
+
+To rename columns in the result, use:
+    SELECT name AS item_name, price AS item_price FROM items;
+
+
+To remove duplicates in the result, use:
+    SELECT DISTINCT category FROM items;
+
+
+Filtering rows (WHERE)
+
+To get rows that match a condition, use:
+    SELECT * FROM items WHERE id = 5;
+
+
+To get rows where a value is greater/less than, use:
+    SELECT * FROM items WHERE price > 100;
+
+
+To filter by multiple conditions (both must be true), use:
+    SELECT * FROM items WHERE category = 'Food' AND price < 50;
+
+
+To filter by multiple conditions (either can be true), use:
+    SELECT * FROM items WHERE category = 'Food' OR category = 'Drinks';
+
+
+To exclude something, use:
+    SELECT * FROM items WHERE category != 'Food';
+
+
+To match one of many values, use:
+    SELECT * FROM items WHERE category IN ('Food', 'Drinks', 'Tech');
+
+
+To check a range, use:
+    SELECT * FROM items WHERE price BETWEEN 10 AND 50;
+
+
+To search text patterns, use:
+    SELECT * FROM items WHERE name LIKE '%apple%';
+
+
+To find rows where a column is empty (NULL), use:
+    SELECT * FROM items WHERE description IS NULL;
+
+
+To find rows where a column is NOT empty, use:
+    SELECT * FROM items WHERE description IS NOT NULL;
+
+
+Sorting and limiting results
+
+To sort results ascending, use:
+    SELECT * FROM items ORDER BY price ASC;
+
+
+To sort results descending, use:
+    SELECT * FROM items ORDER BY price DESC;
+
+
+To get only the first N rows, use:
+    SELECT * FROM items LIMIT 10;
+
+
+To skip some rows and then take N rows, use (pagination):
+    SELECT * FROM items LIMIT 10 OFFSET 20;
+
+
+Aggregation (COUNT, SUM, AVG, MIN, MAX)
+
+To count how many rows are in a table, use:
+    SELECT COUNT(*) AS total_items FROM items;
+
+
+To sum a column, use:
+    SELECT SUM(price) AS total_price FROM items;
+
+
+To get average/min/max, use:
+    SELECT AVG(price) AS avg_price, MIN(price) AS min_price, MAX(price) AS max_price
+    FROM items;
+
+
+
+Grouping (GROUP BY + HAVING)
+
+To group rows and get counts per group, use:
+    SELECT category, COUNT(*) AS count FROM items GROUP BY category;
+
+
+To filter grouped results (HAVING is for groups), use:
+    SELECT category, COUNT(*) AS count FROM items GROUP BY category HAVING COUNT(*) > 3;
+
+
+
+Joining tables (relationships)
+
+Assume:
+users(id, name)
+orders(id, user_id, total)
+
+To combine matching rows from both tables (INNER JOIN), use:
+    SELECT users.name, orders.total FROM users INNER JOIN orders ON orders.user_id = users.id;
+
+
+To get all users even if they have no orders (LEFT JOIN), use:
+    SELECT users.name, orders.total FROM users LEFT JOIN orders ON orders.user_id = users.id;
+
+
+To get rows where a left join didn’t match (find “missing” relations), use:
+    SELECT users.* FROM users LEFT JOIN orders ON orders.user_id = users.id WHERE orders.id IS NULL;
+
+
+Insert data (INSERT)
+
+To add a new row, use:
+    INSERT INTO items (name, price, category) VALUES ('Apple', 10, 'Food');
+
+
+To add multiple rows at once, use:
+    INSERT INTO items (name, price, category) VALUES ('Apple', 10, 'Food'), ('Milk', 25, 'Drinks');
+
+================================
+Update data (UPDATE)
+================================
+
+To update a value in rows that match a condition, use:
+    UPDATE items SET price = 15 WHERE id = 1;
+
+
+To update multiple columns, use:
+    UPDATE items SET price = 15, category = 'Fruit' WHERE id = 1;
+⚠️ If you run UPDATE items SET price = 15; with no WHERE, it updates everything.
+
+===============================
+Delete data (DELETE)
+===============================
+
+To delete a row that matches a condition, use:
+    DELETE FROM items WHERE id = 1;
+
+
+To delete all rows in a table, use:
+    DELETE FROM items;
+
+
+===============================
+Create and modify tables (DDL)
+===============================
+
+To create a new table, use:
+CREATE TABLE items (
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  price REAL NOT NULL,
+  category TEXT
+);
+
+
+To add a new column, use:
+    ALTER TABLE items ADD COLUMN created_at TEXT;
+
+
+To delete a table completely, use:
+    DROP TABLE items;
+
+===============================
+Constraints, indexes, and safety
+===============================
+
+To prevent duplicates in a column, use UNIQUE:
+CREATE TABLE users (
+  id INTEGER PRIMARY KEY,
+  email TEXT UNIQUE NOT NULL
+);
+
+
+To speed up searching on a column, create an index:
+    CREATE INDEX idx_items_category ON items(category);
+
+===============================
+Useful “real world” patterns
+===============================
+
+To get the newest rows (by date), use:
+    SELECT * FROM items ORDER BY created_at DESC LIMIT 10;
+
+
+To check if something exists, use:
+    SELECT 1 FROM items WHERE name = 'Apple' LIMIT 1;
+
+
+To “search” multiple fields, use:
+    SELECT * FROM items WHERE name LIKE '%app%' OR category LIKE '%app%';
