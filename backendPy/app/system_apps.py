@@ -14,7 +14,7 @@ def get_system_apps():
                 "type": "Core Application",
                 "size": "Built-in",
                 "keywords": [],
-
+                "developers": "MarrfeeOS"
             },
             {
                 "id": "marrfeeAppStore",
@@ -30,7 +30,7 @@ def get_system_apps():
                 "type": "Core Application",
                 "size": "Built-in",
                 "keywords": [],
-
+                "developers": "MarrfeeOS"
             },
 
     ]

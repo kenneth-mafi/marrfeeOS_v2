@@ -4,35 +4,27 @@ import { getPinSetupForm } from './pinSetupForm';
 import Header from '../../components/header/Header';
 import Hero from '../../Components/Hero/Hero';
 import FormTemplate from '../../components/forms/formTemplate/FormTemplate';
-import MainPageFrame from '../../../../../../components/PageFrames/mainPageFrame/MainPageFrame';
 import { useDigIDStateContext } from '../../hooks/useContexts';
 import { useNavigate } from 'react-router-dom';
+import MainPageFrame from '../../components/Frames/pageFrame/MainPageFrame';
 
 const PinSetupPage = () => {
     const { sendRequest, userData, setHasSecurityCode } = useDigIDStateContext();
     const navigate = useNavigate();
     const proceed = () => {
-        navigate("/digIDApp/authentificationPage");
+        navigate("/digIDApp/homePage");
     };
 
     const submit = async ( formData ) => {
-
-        console.log(formData);
-        console.log("SETUP USER DATA: ", userData);
-        console.log("SETUP USER ID: ", userData.userID);
         formData["userID"] = userData?.userID;
-        console.log("SETUP FORM DATA: ", formData);
         
         const data = await sendRequest( formData, 'set-pin' );
-        console.log("SETUP RETURNED DATA: ",data);
-        console.log(data?.success);
 
         if (data?.success){
             setHasSecurityCode(true);
             proceed();
         }
-        else console.log("HEre");
-        ; 
+        else return false;
     };
 
     const formContent = getPinSetupForm(submit);

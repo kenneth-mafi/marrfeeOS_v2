@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Navigate, replace, useNavigate } from 'react-router-dom';
 import MainPageFrame from '../../../components/PageFrames/mainPageFrame/MainPageFrame';
 import ScrollArea from '../../../components/ScrollArea/ScrollArea';
 import AppStoreCategoryChips from '../components/AppStoreCategoryChips/AppstoreCategoryChips';
@@ -12,8 +12,7 @@ import { useAppStoreContext } from '../../../marrfeeOSHooks/hooks/contexts';
 
 export default function AppsHomePage() {
   const navigate = useNavigate();
-  const { appStoreList } = useAppStoreContext();
-  
+  const { appStoreList, isInstallBuffering } = useAppStoreContext();
 
   const chips = ["Finance", "Social Networking", "New", "Productivity", "Education"];
 
@@ -31,7 +30,11 @@ export default function AppsHomePage() {
           <AppStoreCategoryChips chips={chips} active='Finance'/>
           <AppStoreFeaturedBanner title='Title' subtitle='Text by editorial' />
           <AppStoreHeadlineRow items={headlineItems} title='Headline' />
-          <AppStoreEssentialsList apps={appStoreList} title='Essential Apps' />
+          <AppStoreEssentialsList
+            apps={appStoreList}
+            title='Essential Apps'
+            isInstallBuffering={isInstallBuffering}
+          />
         </ScrollArea>
       ),
     },

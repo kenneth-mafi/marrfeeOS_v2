@@ -16,8 +16,9 @@ export default function AppDetailsStatsRow({ appData }) {
       <Stat top={"1337 RATINGS"} middle={"5.0"} bottom={"★★★★★"} />
       <Stat top={"AGE"} middle={"12+"} bottom={"Years Old"} />
       <Stat top={"CHART"} middle={"No.1"} bottom={appData.category} />
-      <Stat top={"DEVELOPER"} middle={"🤖"} bottom={"Marrfee, Jose"} />
+      <Stat top={"DEVELOPER"} middle={"🤖"} bottom={appData.developers} />
       <Stat top={"LANGUAGE"} middle={"EN"} bottom={"+ 23 More"} />
+      <Stat top={"SIZE"} middle={`${appData.size},0`} bottom={"MB"} />
     </section>
   );
 }

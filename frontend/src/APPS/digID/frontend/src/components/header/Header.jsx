@@ -7,13 +7,9 @@ function Header({ title, logo, alt, text="", className='' }) {
 
     const navigate = useNavigate();
 
-    const goBack = () => {
-      navigate(-1);
-    }
-
     return (
         <div className={`digId-header ${className}`}>
-          <Link className={`digId-header-link`} onClick={goBack}>
+          <Link className={`digId-header-link`} to={"/homeScreen"}>
               {!text && <img src={backArrowIcon} alt={alt} className={`digId-header-icon`} /> }    
               {text && <p className={`digId-header-text`}>{text}</p>} 
           </Link>

@@ -1,7 +1,7 @@
 from . import db
-from sqlalchemy import text
+from sqlalchemy import text, func
 import json
-
+from datetime import datetime
 
 class App( db.Model ):
     __tablename__ = "apps"
@@ -15,6 +15,7 @@ class App( db.Model ):
     color = db.Column(db.String, nullable=False)
     appLogo = db.Column(db.String, nullable=False)
     size = db.Column(db.String, nullable=False)
+    developers = db.Column(db.String, nullable=False)
 
     # Optional text fields
     storeName = db.Column(db.String)
@@ -31,6 +32,13 @@ class App( db.Model ):
     # Booleans stored as INTEGER (SQLite convention)
     isSystemApp = db.Column(db.Integer, default=0)
     isInstalled = db.Column(db.Integer, default=0)
+
+    createdAt = db.Column(db.String, default=lambda: datetime.now().isoformat())
+    updatedAt = db.Column(
+        db.String,
+        default=lambda: datetime.now().isoformat(),
+        onupdate=lambda: datetime.now().isoformat(),
+    )
 
     def to_dict(self):
         """
@@ -51,6 +59,7 @@ class App( db.Model ):
             "path": self.path,
             "color": self.color,
             "appLogo": self.appLogo,
+            "developers": self.developers,
             "description": self.description,
             "category": self.category,
             "allowedDevices": safe_json_load(self.allowedDevices),
@@ -61,6 +70,8 @@ class App( db.Model ):
             "keywords": safe_json_load(self.keywords),
             "screenshots": safe_json_load(self.screenshots),
             "heroImage": self.heroImage,
+            "createdAt": self.createdAt,
+            "updatedAt": self.updatedAt,
         }
 
 def ensure_app_columns(columns):
@@ -74,4 +85,12 @@ def ensure_app_columns(columns):
         if name in existing:
             continue
         db.session.execute(text(f"ALTER TABLE apps ADD COLUMN {name} {sql_type}"))
+    db.session.commit()
+
+def drop_app_tables():
+    """
+    Drop app-related tables to reinitialize schema.
+    """
+    db.session.execute(text("DROP TABLE IF EXISTS apps"))
+    db.session.execute(text("DROP TABLE IF EXISTS appStore"))
     db.session.commit()

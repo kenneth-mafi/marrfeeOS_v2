@@ -30,3 +30,10 @@ export const addToStore = async (appMetaData) => {
   const res = await sendAPIRequest("apps/launch-app", appMetaData, "POST");
   return res;
 };
+
+
+export const installNewApp = async (appID) => {
+    if (!appID) return { success: false, error: "Missing App ID" };
+    const res = await sendAPIRequest("apps/install-app", {"id": appID}, "POST")
+    return res
+}

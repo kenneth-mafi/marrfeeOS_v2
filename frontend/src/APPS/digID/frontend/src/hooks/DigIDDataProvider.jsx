@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { DigIDDataContext } from "./contexts";
 
 const DigIDDataProvider = ({ children }) => {
@@ -7,7 +7,9 @@ const DigIDDataProvider = ({ children }) => {
     const [ isRegistered, setIsRegistered ] = useState(false);
     const [ hasSecurityCode, setHasSecurityCode ] = useState(false);
 
-    const API = import.meta.env.VITE_API_URL;
+    const API = import.meta.env.VITE_DIGID_API_URL
+        || import.meta.env.VITE_API_URL
+        || "http://localhost:3000";
 
     const sendRequest = async ( dataObj, endpoint, method="POST", ) => {
         if ( !( dataObj && endpoint ) ) return { success: false, error: "No data" };
@@ -26,13 +28,11 @@ const DigIDDataProvider = ({ children }) => {
                 console.error("❌ Invalid User:", data);
                 return data;
             }
-            console.log("✅ Valid User");
-            console.log("DPr USER DATA: ", data.userData);
+            console.log("✅");
             
             if (data?.userData && endpoint === 'register') {
                 setUserData(prev => ({ ...prev, ...data.userData }));
                 setIsRegistered(true);
-                console.log("DPr DATA: ", data);
             }
    
             return data;

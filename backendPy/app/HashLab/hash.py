@@ -26,5 +26,5 @@ def hash(string, salt=""):
 
     norm = rfc.encode_rfc( [ [c] if not tn.num2txt(c) else [ tn.num2txt(c) ] for c in chopped_arr ], 9)
 
-    result = "".join( [ n[0] for n in norm ] )[::-1][:80]
-    return result
+    return "".join( [ n[0] for n in norm ] )[::-1][:80]
+     

@@ -22,8 +22,8 @@ const ProfilePage = () => {
         {
           Component: AppStoreProfileHeaderCard,
           props: {
-                name: "Kenneth Mafi",
-                email: "kennethohunwu@email.com",
+                name: "John Doe",
+                email: "example@email.com",
                 avatarSrc: null,
             },
         },

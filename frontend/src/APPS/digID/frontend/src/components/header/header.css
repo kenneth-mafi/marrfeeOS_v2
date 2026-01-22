@@ -16,10 +16,12 @@
 .digId-header-text{
   font-size: 1rem;
   font-weight: 600;
+  color: var(--text-primary);
 }
 
 .digId-header-title{
   font-size: 1.2rem;
+  color: var(--text-primary);
 }
 
 .digId-header-link{

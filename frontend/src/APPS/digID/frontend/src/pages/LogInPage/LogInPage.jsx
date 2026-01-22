@@ -2,12 +2,12 @@ import './logInPage.css';
 import appLogo from '../../assets/secure.png';
 import Header from '../../components/header/Header';
 import FormTemplate from '../../components/forms/formTemplate/FormTemplate';
-import MainPageFrame from '../../../../../../components/PageFrames/mainPageFrame/MainPageFrame';
 import Label from '../../components/Labels/Label';
 import { getLogInForm } from './logInForm';
 import Hero from '../../Components/Hero/Hero';
 import { useDigIDStateContext } from '../../hooks/useContexts';
 import { useNavigate } from 'react-router-dom';
+import MainPageFrame from '../../components/Frames/pageFrame/MainPageFrame';
 
 const LogInPage = () => {
     const { sendRequest, userData } = useDigIDStateContext();
@@ -17,17 +17,9 @@ const LogInPage = () => {
     };
 
     const submit = async ( formData ) => {
-
-        console.log(formData);
-        console.log("LOGIN USER DATA: ", userData);
-        
         formData["userID"] = userData?.userID;
-        console.log("LOGIN FORM DATA: ",formData);
         
         const data = await sendRequest( formData, 'login' );
-        console.log("LOGIN FROM BACKEND: ", data);
-        console.log("LOGIN FROM BACKEND: ", data?.success);
-        console.log("LOGIN FROM BACKEND: ", data?.userData);
         if (data?.success){
             proceed()
         }

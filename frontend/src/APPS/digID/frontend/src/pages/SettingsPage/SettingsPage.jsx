@@ -1,4 +1,3 @@
-import MainPageFrame from '../../../../../../components/PageFrames/mainPageFrame/MainPageFrame';
 import { ColumnGrid } from '../../components/GridContainers/ColumnGrid';
 import Header from '../../components/header/Header';
 import MenuLinkItem from '../../components/LinkItem/MenuLinkItem';
@@ -11,6 +10,7 @@ import trashIcon  from '../../assets/trash.png';
 import setUpPinIcon  from '../../assets/pin.png';
 import editPinIcon  from '../../assets/code.png';
 import exitIcon from '../../assets/log-out.png';
+import MainPageFrame from '../../components/Frames/pageFrame/MainPageFrame';
 
 
 const SettingsPage = () => {
@@ -49,7 +49,7 @@ const SettingsPage = () => {
             id: "akjjkcqdb91qeeixn0",
             icon: exitIcon,
             label: "Exit",    
-            to: "/digIDApp/logInPage"        
+            to: "/homeScreen"        
         },
         {
             id: "akjjkaseppepwbejieixn",

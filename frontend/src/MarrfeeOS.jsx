@@ -22,6 +22,7 @@ function MarrfeeOS() {
       .then(mod => {
         if (mod.launchApp) {
           mod.launchApp(addToAppStore);
+        
         }
       })
       .catch((err) => {

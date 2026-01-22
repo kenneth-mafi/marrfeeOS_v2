@@ -22,8 +22,7 @@ const AuthentificationPage = () => {
             return false;
         }
 
-        formData["userID"] = userData.userID
-        console.log("AUTH FORM DATA: ", formData);
+        formData["userID"] = userData.userID;
         
         const response = await sendRequest( formData, 'login-pin' );
 

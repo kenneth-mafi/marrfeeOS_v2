@@ -21,6 +21,7 @@ export const launchApp = ( addToAppStore ) => {
             "category": "Security",
             "type": "Core Application",
             "size": "86",
+            "developers": "Marrfee & Jose",
             "keywords": ["security", "id", "secure", "verification", "verify"],
             "screenshots": ["/static/screenshots/digid1.png", "/static/screenshots/digid2.png", "/static/screenshots/digid3.png"]
         }
@@ -45,7 +46,6 @@ function DigID() {
             <Route path='/pinSetupPage' element={ <PinSetupPage /> } />
             <Route path='/changePinPage' element={ <ChangePinPage /> } />
         </Routes>
-
   )
 }
 

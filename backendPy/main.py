@@ -9,10 +9,21 @@ app = create_app()
 
 with app.app_context():
     db.create_all()
-    # ensure_app_columns({
-    #     "screenshots": "TEXT",
-    #     "heroImage": "TEXT",
-    # })
+    ensure_app_columns({
+        "developers": "TEXT NOT NULL DEFAULT 'Unknown'",
+        "createdAt": "TEXT NOT NULL DEFAULT ''",
+        "updatedAt": "TEXT NOT NULL DEFAULT ''",
+        "storeName": "TEXT",
+        "description": "TEXT",
+        "category": "TEXT",
+        "type": "TEXT",
+        "heroImage": "TEXT",
+        "allowedDevices": "TEXT",
+        "keywords": "TEXT",
+        "screenshots": "TEXT",
+        "isSystemApp": "INTEGER DEFAULT 0",
+        "isInstalled": "INTEGER DEFAULT 0"
+    })
     plant_system_apps()
 
 if __name__ == "__main__":

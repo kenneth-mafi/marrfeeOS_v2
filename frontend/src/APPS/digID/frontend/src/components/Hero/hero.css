@@ -27,7 +27,7 @@
 .digId-hero-title{
     font-size: .8rem;
     font-weight: 600;
-    color: var(--text-primary); 
+    color: var(--text-primary) !important; 
 }
 
 

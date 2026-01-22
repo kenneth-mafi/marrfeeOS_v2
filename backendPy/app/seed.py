@@ -40,6 +40,7 @@ def plant_system_apps():
             keywords=keywords,
             screenshots=screenshots,
             heroImage=item.get("heroImage"),
+            developers=item.get("developers", "Unknown"),
         )
 
         db.session.add(app)

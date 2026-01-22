@@ -4,20 +4,20 @@ import { getRegistrationForm } from './registrationForm';
 import { useDigIDStateContext } from '../../hooks/useContexts';
 import Header from '../../components/header/Header';
 import FormTemplate from '../../components/forms/formTemplate/FormTemplate';
-import MainPageFrame from '../../../../../../components/PageFrames/mainPageFrame/MainPageFrame';
 import Label from '../../components/Labels/Label';
 import { generateId } from '../../utils';
 import { useNavigate } from 'react-router-dom';
+import MainPageFrame from '../../components/Frames/pageFrame/MainPageFrame';
 
 const RegistrationPage = () => {
     const navigate = useNavigate();
     const { sendRequest } = useDigIDStateContext();
+
     const proceed = () => {
-        navigate("/digIDApp/logInPage");
+        navigate("/digIDApp/homePage");
     };
 
     const submit = async ( formData ) => {
-        console.log(formData);
         
         let personNum = formData.personNummer;
         const index = 8
@@ -30,9 +30,7 @@ const RegistrationPage = () => {
         formData["userID"] = generateId();
         
         const ok = await sendRequest( formData, 'register' );
-        console.log(ok);
-        console.log(ok.success);
-        console.log(ok.userData);
+
         if (ok?.success){
             proceed()
             return true;

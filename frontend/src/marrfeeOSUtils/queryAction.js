@@ -25,3 +25,16 @@ export const filterListBy = (list, key, value) =>
 export const filterOutFromList = (list, key, value) =>
   list.filter(item => item?.[key] !== value);
 
+export const findDictInList = (list, key, value) => {
+    if (!(list && key && value)) return null;
+    const dict = list.find(d => d?.[key] === value);
+    if (!dict) return null;
+    return dict;
+}
+
+export const existsInList = (list, key, value) => {
+    if (!(list && key && value)){ 
+      console.error("⚠️ Incomplete or Invalid parameters");
+      return; }
+    return list.some(itm => itm?.[key]=== value)
+}

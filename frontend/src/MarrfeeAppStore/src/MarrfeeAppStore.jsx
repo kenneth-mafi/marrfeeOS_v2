@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import { useTime } from "../../marrfeeOSHooks/hooks/contexts";
 import { lazy, Suspense, useEffect } from "react";
-import AppsHomePage from "./Pages/AppsHomePage";
 import LoadingPlaceholder from "../../components/loadingPlaceholder/LoadingPlaceholder";
 
 const ProfilePage = lazy(() => import('./Pages').then(m => ({ default: m.ProfilePage })));
 const AppDetailsPage = lazy(() => import('./Pages').then(m => ({ default: m.AppDetailsPage })));
+const AppsHomePage = lazy(() => import('./Pages').then(m => ({ default: m.AppHomePage })));
 
 const MarrfeeAppStore = () => {
     const { changeTimeColor  } = useTime();
