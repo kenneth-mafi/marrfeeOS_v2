@@ -1,5 +1,5 @@
 import './loadingPlaceholder.css';
-import loadingIcon from '../../assets/loading.png';
+import loadingIcon from '../../assets/loading2.png';
 
 const LoadingPlaceholder = () => {
     return <div className={`mOS-loading-placeholder-contr`} >

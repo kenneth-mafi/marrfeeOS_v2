@@ -1,0 +1,43 @@
+.launch-page{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+      background: linear-gradient(135deg, #9ca5b9, #20253a);
+}
+
+
+.launch-hero {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.launch-illustration {
+  width: 120px;
+  height: 80px;
+  display: flex;
+  background-color: #fdf1de;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #55493650;
+}
+
+.launch-illustration img{
+  width: 150px;
+  height: auto;
+}
+/* #FE7743
+#EFEEEA
+#273F4F
+
+*/

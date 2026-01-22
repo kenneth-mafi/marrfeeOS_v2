@@ -1,0 +1,62 @@
+.final-score-card{
+    width: 90%;
+    height: 230px;
+    min-height: 230px;
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.229);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 0.5rem ;
+}
+
+.score-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 25%;
+    gap: 0.5rem;
+}
+
+.final-score-card h1{
+    font-size: 1rem;
+}
+
+.final-message-container{
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.scores-board{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem 0;
+    font-weight: 600;
+}
+
+.final-message-container p{
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+.fs-button-container{
+    width: 100%;
+    height: 20%;
+    min-height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

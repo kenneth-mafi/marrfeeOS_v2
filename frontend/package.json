@@ -6,7 +6,7 @@
   "scripts": {
     "frontend": "vite",
     "marrfeeOS-backend": "cd ../backendPy && python main.py",
-    "digID-backend": "node src/APPS/digID/backend/src/server.cjs",
+    "digID-backend": "node src/APPS/digID/backend/src/server.js",
     "dev": "concurrently -k --restart-tries 0 -n FRONTEND,MARRFEE,DIGID -c cyan,green,magenta \"npm run frontend\" \"npm run marrfeeOS-backend\" \"npm run digID-backend\"",
     "build": "vite build",
     "lint": "eslint .",

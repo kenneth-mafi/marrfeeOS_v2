@@ -1,0 +1,21 @@
+.rps-link-contr{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1rem;
+  text-decoration: none;
+  background-color: white;
+}
+
+.rps-link-contr img{
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.rps-link-contr span{
+  font-size: 15px;
+  color: black;
+}
+

@@ -9,7 +9,7 @@ import LoadingPlaceholder from './components/loadingPlaceholder/LoadingPlacehold
 
 function MarrfeeOS() {
 
-  const { addToAppStore, appList, isLoadingApps, appStoreList } = useAppStoreContext();
+  const { addToAppStore, appList, isLoadingApps } = useAppStoreContext();
   const hasLaunchedAppsRef = useRef(false);
 
   useEffect(() => {
@@ -23,11 +23,16 @@ function MarrfeeOS() {
         if (mod.launchApp) {
           mod.launchApp(addToAppStore);
         
-        }
-      })
+        }})
       .catch((err) => {
         console.error(err);
       });
+
+      import('./APPS/RPS').then(mod => { 
+        if (mod.launchApp) { mod.launchApp(addToAppStore)}
+      }).catch((err) => {console.log(err);
+      })
+      
   }, [isLoadingApps, addToAppStore]);
 
   if (isLoadingApps) {
@@ -47,11 +52,14 @@ function MarrfeeOS() {
               <Route path="/homeScreen" element={ <HomeScreen /> } />
 
               {appList.map((app, index) => {
+
                 const loader = appLoaderMap[app.id];
                 if (!loader) return null;
+
                 const Component = loader.Component;
                 const absolutePath = `${app?.path}/*`;
                 const KEY = app?.id ?? index;
+                
                 return <Route path={absolutePath} element={<Component />} key={KEY}/>
               })}
 

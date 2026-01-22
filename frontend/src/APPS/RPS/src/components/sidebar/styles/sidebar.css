@@ -1,0 +1,27 @@
+.rps-sidebar-container{
+  width: 75%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 0;
+  transform: translateY(10%) translateX(-110%);
+  left: 0;
+  padding: 1rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 99;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.178);
+  transition: all 0.3s ease-in-out;
+}
+
+.rps-sidebar{
+  width: 100%;
+  flex-grow: 1;
+}
+
+.rps-sidebar-container.active{
+  transform: translateX(0%) translateY(10%);
+}

@@ -1,0 +1,1 @@
+export {default as RockPaperScissors, launchApp} from './src/RockPaperScissors';
