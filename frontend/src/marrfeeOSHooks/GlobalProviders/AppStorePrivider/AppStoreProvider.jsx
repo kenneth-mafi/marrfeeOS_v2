@@ -39,7 +39,6 @@ const AppStoreProvider = ({ children }) => {
         }  
         
         const res = await addToStore( appData );
-        console.log(res);
         if (res?.success) {
             setAppStoreList(prev =>
                 prev.some(app => app.id === appID) ? prev : [...prev, appData]

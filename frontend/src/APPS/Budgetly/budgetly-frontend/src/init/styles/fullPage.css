@@ -1,0 +1,77 @@
+.init-page {
+  height: 100%;
+  width: 100%;
+  padding: 10rem 1.5rem 7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(180deg, #f7f9fc, #ffffff);
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.crypto button{
+  margin-top: 3rem;
+}
+
+.crypto{
+  padding: 5.5rem 1.5rem 5rem;  
+}
+
+.init-hero {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.init-hero h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.budgetly-description {
+  color: #666;
+  font-size: 0.8rem;
+  max-width: 350px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.init-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* IMAGE PLACEHOLDERS */
+
+.init-illustration {
+  width: 220px;
+  height: 180px;
+  display: flex;
+  background-color: #fdf1de;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1.5rem;
+  border-radius: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.init-illustration img{
+  width: 320px;
+  height: auto;
+}
+
+.welcome img {
+  transform: translateY(-10%);
+}
+
+.cash img{
+  transform: translateY(-10%);  
+}
+
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}

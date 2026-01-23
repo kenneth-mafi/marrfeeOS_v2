@@ -1,0 +1,48 @@
+.notification-dropdown {
+  position: fixed;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 280px;
+  max-width: 90%;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+  z-index: 9999;
+  cursor: pointer;
+  transition: top 0.35s ease, opacity 0.3s ease;
+  opacity: 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Slide down */
+.notification-dropdown.show {
+  top: 20px;
+  opacity: 1;
+}
+
+/* Slide up */
+.notification-dropdown.hide {
+  top: -80px;
+  opacity: 0;
+}
+
+/* Types */
+.notification-dropdown.success {
+  background-color: #2ecc71;
+}
+
+.notification-dropdown.error {
+  background-color: #e74c3c;
+}
+
+.notification-dropdown.warning {
+  background-color: #f39c12;
+}
+
+.notification-dropdown.info {
+  background-color: #3498db;
+}

@@ -1,0 +1,19 @@
+
+
+.textarea-input {
+  display: block;
+  width: 100%;
+  min-height: 8rem;   
+  padding: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #00457C;
+  resize: vertical;
+  line-height: 1.2;
+  font-size: 1rem;
+}
+
+.textarea-input:focus {
+  outline: none;
+  border-color: #06294e; 
+  box-shadow: 0 0 0 3px rgba(43,108,176,0.08);
+}

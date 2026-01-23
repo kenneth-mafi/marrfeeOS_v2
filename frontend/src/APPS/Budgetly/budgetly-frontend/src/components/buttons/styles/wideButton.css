@@ -1,0 +1,28 @@
+
+.wide-button{
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 50px;
+  border: none;
+  color: rgb(255, 255, 255);
+  background-color: #426ce0;
+  box-shadow: 0px 0px 10px rgba(255, 255, 0, 0.11);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.wide-btn-dark{
+  background-color: rgb(5, 13, 39);
+}
+
+.wide-button img{
+  width: 1rem;
+  height: auto;
+}

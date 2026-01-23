@@ -1,0 +1,11 @@
+.text-card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 70px;
+    font-size: 0.75rem;
+    color: gray;
+    text-align: center;
+    margin: 0 auto;
+}

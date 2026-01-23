@@ -1,0 +1,55 @@
+.bal-card-contr{
+  width: 100%;
+  height: 200px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px rgba(217, 231, 17, 0.062);
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+
+.bc-top-section{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bc-top-title-section{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.bc-top-title-section img{
+  width: 25px;
+  height: 25px;
+}
+
+.growth-stat-section{
+  font-weight: 600;
+}
+
+.card-balance{
+  width: 100%;
+  height: 190px;
+  display: flex;
+}
+
+.card-balance h1{
+  font-size: 1.8rem;
+  margin-top: 2.5rem;
+}
+
+.card-icon{
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}

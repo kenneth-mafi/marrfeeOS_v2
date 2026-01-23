@@ -1,0 +1,49 @@
+.multiframe-contr{
+  width: 100%;
+  min-height: 250px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.toggle-links{
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0 0.8rem;
+  position: relative;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  color: #426ce0;
+}
+
+.tab-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: #426ce0;
+  transition: transform 0.3s ease;
+}
+
+.content-wrapper{
+  width: 100%;
+  flex-grow: 1;
+  border-radius: 15px;
+  height: auto;
+}

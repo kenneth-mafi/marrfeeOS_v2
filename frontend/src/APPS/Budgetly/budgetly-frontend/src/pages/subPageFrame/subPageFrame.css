@@ -1,0 +1,11 @@
+.subpage-contr{
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-grow: inherit;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 5rem;
+  background-color: aliceblue;
+}

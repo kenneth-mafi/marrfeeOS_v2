@@ -1,0 +1,21 @@
+.label-contr{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+  margin-bottom: -1rem;
+  width: 100%;
+}
+
+.label-contr h3{
+  font-size: 1.3rem;
+}
+
+.label-contr a{
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.small-label{
+  padding: 0.5rem 1rem 1rem;
+}

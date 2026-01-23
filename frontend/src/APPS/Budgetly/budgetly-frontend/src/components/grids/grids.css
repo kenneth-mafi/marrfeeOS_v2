@@ -1,0 +1,25 @@
+
+
+.grid-container, .row-grid-contr{
+  display: grid;
+  width: 100%;
+  height: auto;
+}
+
+.grid-container{
+  grid-template-columns: repeat(1fr);
+  gap: 0;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.row-grid-contr{
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.7rem;
+}
+
+.grid-container.secondary{
+  background-color: none;  
+  gap: 1rem;
+}
+

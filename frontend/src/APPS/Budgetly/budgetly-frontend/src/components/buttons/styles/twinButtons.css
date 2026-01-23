@@ -1,0 +1,42 @@
+.twin-buttons{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.twin-buttons button img{
+  width: 0.9rem;
+  height: auto;
+}
+
+.button-plain, .button-blue, .button-black{
+  width: 49%;
+  padding: 0.75rem;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 20px;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;    
+}
+
+.button-plain{
+  border: 1px solid gray;
+  background: none;
+  color: rgb(0, 0, 0);
+}
+
+.button-blue{
+  background-color: rgb(75, 109, 224);
+  color: white;
+  border: none;
+}
+
+.button-black{
+  background-color: rgb(5, 13, 39);
+  color: white;
+  border: none;
+}

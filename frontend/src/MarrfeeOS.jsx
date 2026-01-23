@@ -32,6 +32,11 @@ function MarrfeeOS() {
         if (mod.launchApp) { mod.launchApp(addToAppStore)}
       }).catch((err) => {console.log(err);
       })
+
+      import('./APPS/Budgetly/budgetly-frontend').then(mod => {
+        if (mod.launchApp) { mod.launchApp(addToAppStore)}
+      }).catch((err) => { console.log(err);
+      })
       
   }, [isLoadingApps, addToAppStore]);
 

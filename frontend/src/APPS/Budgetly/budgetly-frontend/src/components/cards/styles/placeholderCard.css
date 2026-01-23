@@ -1,0 +1,23 @@
+
+.plc-hol-container{
+  width: 100%;
+  background-color: rgba(138, 138, 138, 0.144);
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  filter: blur(20%);
+  border-radius: 15px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.082);
+}
+
+.plc-hol-container img{
+  width: 4.5rem;
+  height: auto;
+}
+
+.plc-hol-container p{
+  font-size: .7rem;
+}
